@@ -15,8 +15,12 @@ let currencyDiv2 = document.querySelector(".currency-div2");
 let Cspan2 = document.querySelector(".currency-div2 span");
 let flag2 = document.querySelector(".currency-div2 img");
 
+let search1 = document.querySelector(".search1");
+let search2 = document.querySelector(".search2");
+
 let currencyData; 
 let flagsData;
+let countries;
 
 let active = 0;
 
@@ -26,7 +30,7 @@ async function setup(){
     // currencyData = await (await fetch("https://open.er-api.com/v6/latest/USD")).json();
 
     currencyData = currencyData["rates"];
-    let countries = Object.keys(currencyData);
+    countries = Object.keys(currencyData);
     let firstCountry =  countries[0];
     Cspan1.innerHTML = firstCountry;
     Cspan2.innerHTML = firstCountry;
@@ -35,18 +39,8 @@ async function setup(){
     flag2.src = flagsData[firstCountry];
 
     for (let country of countries){
-        let option = document.createElement("div");
-        
-        option.setAttribute("value", country);
-        let img = document.createElement("img");
-        img.src = flagsData[country];
-        option.appendChild(img);
-        option.appendChild(document.createTextNode(country));
-        option.className = "option1";
-        let option2 = option.cloneNode(true);
-        option2.className = "option2";
-        menu1.appendChild(option);
-        menu2.appendChild(option2);
+        addOption(country, 1);
+        addOption(country, 2);
     }
 
     let options1 = Array.from(menu1.children);
@@ -93,6 +87,23 @@ async function setup(){
 
 setup();
 
+function addOption(country, n){
+    let option = document.createElement("div");
+        
+    option.setAttribute("value", country);
+    let img = document.createElement("img");
+    img.src = flagsData[country];
+    option.appendChild(img);
+    option.appendChild(document.createTextNode(country));
+    if (n === 1){
+        option.className = "option1";
+        menu1.appendChild(option);
+    }else{
+        option.className = "option2";
+        menu2.appendChild(option);
+    }
+}
+
 function updateCurrency1(c){
     Cspan1.innerHTML = c;
     flag1.src = flagsData[c];
@@ -135,14 +146,18 @@ function updateField2(){
 
 currencyDiv1.onclick = function(){
     drop2.style.display = "none";
-
     if (drop1.style.display === "block"){
         drop1.style.display = "none";
     }else{
         drop1.style.display = "block";
     }
+    search1.focus();
+
     
 }
+console.log(search1);
+console.log(search2);
+
 currencyDiv2.onclick = function(){
     drop1.style.display = "none";
     if (drop2.style.display === "block"){
@@ -150,6 +165,8 @@ currencyDiv2.onclick = function(){
     }else{
         drop2.style.display = "block";
     }
+    search2.focus();
+
 }
 
 document.addEventListener("click", function(event){
@@ -163,14 +180,13 @@ document.addEventListener("click", function(event){
         drop2.style.display = "none";
     }
 })
-// I don't understand this part of the code
+
 currencyDiv1.addEventListener("click", (event) => {
     event.stopPropagation(); 
 });
 currencyDiv2.addEventListener("click", (event) => {
     event.stopPropagation(); 
 });
-
 
 field1.oninput = function(){
     updateField2();
@@ -182,6 +198,38 @@ field2.oninput = function(){
     active = 2;
 };
 
+search1.oninput = function(){
+    let val1 = search1.value;
+    val1 = val1.toUpperCase();
+    menu1.replaceChildren();
+    countries.forEach(function(item){
+        if (item.includes(val1)){
+            addOption(item, 1)
+        }
+    })
 
+    if (menu1.children.length === 0) {
+        let empty = document.createElement("div");
+        empty.appendChild(document.createTextNode("No Currency Found"));
+        empty.className = "empty";
+        menu1.appendChild(empty);
+    }
+};
+search2.oninput = function(){
+    let val2 = search2.value;
+    val2 = val2.toUpperCase();
+    menu2.replaceChildren();
+    countries.forEach(function(item){
+        if (item.includes(val2)){
+            addOption(item, 2)
+        }
+    })
+    if (menu2.children.length === 0) {
+        let empty = document.createElement("div");
+        empty.appendChild(document.createTextNode("No Currency Found"));
+        empty.className = "empty";
+        menu2.appendChild(empty);
+    }
+};
 
 

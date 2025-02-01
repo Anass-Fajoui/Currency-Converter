@@ -115,10 +115,15 @@ border-radius: 10px;
 }
 .active{
     background-color: #eee;
-
 }
 img{
     width: 30px;
     height: 20px;
     margin-right: 10px;
+}
+
+.empty{
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
 }
