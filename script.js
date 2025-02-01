@@ -4,17 +4,20 @@ let field1 = document.querySelector(".field1");
 let field2 = document.querySelector(".field2");
 
 let currencyData; 
+let flagsData;
 
 async function getCurrencyData(){
     currencyData = await (await fetch("currency.json")).json();
+    flagsData = await (await fetch("flags.json")).json();
     // currencyData = await (await fetch("https://open.er-api.com/v6/latest/USD")).json();
 
     currencyData = currencyData["rates"];
     let countries = Object.keys(currencyData);
     for (let country of countries){
         let option = document.createElement("option");
+
         option.value = country;
-        option.innerText = country;
+        option.appendChild(document.createTextNode(country));
 
         let option2 = option.cloneNode(true);
         
@@ -55,8 +58,9 @@ function updateField2(){
     }
 }
 
+
 field1.oninput = updateField2;
 field2.oninput = updateField1;
 
-select1.onchange = updateField2;
-select2.onchange = updateField1
+select1.onchange = updateField1;
+select2.onchange = updateField2;
