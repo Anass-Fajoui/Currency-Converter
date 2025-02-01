@@ -1,7 +1,14 @@
-let select1 = document.querySelector("select[name='C1']");
-let select2 = document.querySelector("select[name='C2']");
 let field1 = document.querySelector(".field1");
 let field2 = document.querySelector(".field2");
+
+let menu1 = document.querySelector(".menu1");
+let menu2 = document.querySelector(".menu2");
+
+let Cspan1 = document.querySelector(".currency-div1 span")
+let flag1 = document.querySelector(".currency-div1 img")
+
+let Cspan2 = document.querySelector(".currency-div2 span")
+let flag2 = document.querySelector(".currency-div2 img")
 
 let currencyData; 
 let flagsData;
@@ -13,16 +20,26 @@ async function getCurrencyData(){
 
     currencyData = currencyData["rates"];
     let countries = Object.keys(currencyData);
+    let firstCountry =  countries[0];
+    Cspan1.innerHTML = firstCountry;
+    Cspan2.innerHTML = firstCountry;
+    
+    flag1.src = flagsData[firstCountry];
+    flag2.src = flagsData[firstCountry];
+
     for (let country of countries){
-        let option = document.createElement("option");
-
-        option.value = country;
-        option.appendChild(document.createTextNode(country));
-
-        let option2 = option.cloneNode(true);
+        let option = document.createElement("div");
         
-        select1.appendChild(option);
-        select2.appendChild(option2);
+        option.setAttribute("value", country);
+        let img = document.createElement("img");
+        img.src = flagsData[country];
+        option.appendChild(img);
+        option.appendChild(document.createTextNode(country));
+        option.className = "option1";
+        let option2 = option.cloneNode(true);
+        option2.className = "option2";
+        menu1.appendChild(option);
+        menu2.appendChild(option2);
     }
 }
 
@@ -62,5 +79,5 @@ function updateField2(){
 field1.oninput = updateField2;
 field2.oninput = updateField1;
 
-select1.onchange = updateField1;
-select2.onchange = updateField2;
+
+
