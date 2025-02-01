@@ -54,11 +54,14 @@ i{
     transition: 0.2s;
     cursor: pointer;
 }
+
 .currency-div1:hover, .currency-div2:hover{
     background-color: #eee;
+    user-select: none;
 }
 .drop-down1, .drop-down2{
-    /* display: none; */
+    user-select: none;
+    display: none;
     position: absolute;
     right: -15px;
     z-index: 1;
@@ -109,6 +112,10 @@ border-radius: 10px;
 }
 .option1:hover, .option2:hover{
     background-color: #eee;
+}
+.active{
+    background-color: #eee;
+
 }
 img{
     width: 30px;
