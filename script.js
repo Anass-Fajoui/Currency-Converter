@@ -3,7 +3,7 @@ let select2 = document.querySelector("select[name='C2']");
 let field1 = document.querySelector(".field1");
 let field2 = document.querySelector(".field2");
 
-let currencyData;
+let currencyData; 
 
 async function getCurrencyData(){
     currencyData = await (await fetch("currency.json")).json();
@@ -39,7 +39,7 @@ function updateField1(){
         let currency1 = select1.value;
         let currency2 = select2.value;
         let convertedValue = convert(value2, currency2, currency1);
-        field1.value = `${convertedValue}`;
+        field1.value = `${convertedValue.toFixed(2)}`;
     }
 }
 
@@ -51,7 +51,7 @@ function updateField2(){
         let currency1 = select1.value;
         let currency2 = select2.value;
         let convertedValue = convert(value1, currency1, currency2);
-        field2.value = `${convertedValue}`;
+        field2.value = `${convertedValue.toFixed(2)}`;
     }
 }
 

@@ -3,3 +3,21 @@ input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+.field{
+    margin: 20px;
+    position: relative;
+    width: fit-content;
+}
+.field1 ,.field2{
+    height: 35px;
+    width: 250px;
+    padding: 10px 20px;
+    font-size: 20px;
+}
+select{
+    height: 40px;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -20px;
+}
