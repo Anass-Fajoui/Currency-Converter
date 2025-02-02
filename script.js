@@ -137,6 +137,7 @@ function swap(){
     }
 }
 swapBtn.onclick = swap;
+
 function updateCurrency1(c){
     Cspan1.innerHTML = c;
     flag1.src = flagsData[c];
@@ -184,9 +185,7 @@ currencyDiv1.onclick = function(){
     }else{
         drop1.style.display = "block";
     }
-    search1.focus();
-
-    
+    search1.focus();   
 }
 
 
@@ -221,11 +220,17 @@ currencyDiv2.addEventListener("click", (event) => {
 });
 
 field1.oninput = function(){
+    // if (field1.value.length > 13) {
+    //     field1.value = field1.value.slice(0, 13);
+    // }
     updateField2();
     active = 1;
 };
 
 field2.oninput = function(){
+    // if (field2.value.length > 13) {
+    //     field2.value = field2.value.slice(0, 13);
+    // }
     updateField1();
     active = 2;
 };

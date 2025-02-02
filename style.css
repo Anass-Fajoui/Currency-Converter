@@ -29,7 +29,8 @@ body{
     padding: 15px 10px;
     position: relative;
     border-radius: 10px;
-    width: 700px;
+    width: 850px;
+    margin: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
             0 6px 10px rgba(0, 0, 0, 0.05);
     background-color: white;
@@ -40,32 +41,39 @@ body{
     font-weight: 600;
     margin-bottom: 15px;
 }
-p{
+p.slogan{
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .field-container{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
 }
 .field{
-    margin: 20px;
+    /* margin: 20px; */
     position: relative;
+    border: 1.5px solid #C6C6C6;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: fit-content;
+    margin: 0px 20px;
 }
 .field1 ,.field2{
     height: 35px;
-    width: 250px;
-    padding: 10px 20px;
+    /* width: 250px; */
+    padding: 10px 10px;
     font-size: 17px;
-    border-radius: 3px;
     outline: none;
-    border: 1.5px solid #C6C6C6;
+    border: none;
+    /* border: 1px solid black; */
     font-weight: bold;
 }
-.field1:focus ,.field2:focus{
+.field:focus-within{
     border: 1.5px solid #E5133A;
 }
 i{
@@ -79,10 +87,10 @@ i{
     padding: 5px 5px;
     font-size: 20px;
     font-weight: bold;
-    position: absolute;
+    /* position: absolute;
     right: 5px;
     top: 50%;
-    margin-top: -20px;
+    margin-top: -20px; */
     transition: 0.2s;
     cursor: pointer;
     border-radius: 7px;
@@ -139,7 +147,8 @@ border-radius: 10px;
 .swap{
     background-color: #E5133A;
     color: white;
-    padding: 5px;
+    padding: 6px;
+    width: 30px;
     border-radius: 50%;
     cursor: pointer;
     transition: 0.2s;
@@ -180,10 +189,12 @@ img{
 }
 
 .end{
+    margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 30px;
+    /* border: 1px solid black; */
 }
 .end p{
     font-weight: 600;
