@@ -13,28 +13,53 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #F0F4FE; */
 }
+.half1{
+    position: absolute;
+    z-index: -1;
+    height: 50vh;
+    width: 100%;
+    background-color: #F0F5FF;
+    top: 0;
+    left: 0;
+}
+/* .half2{
+    position: absolute;
+    z-index: -1;
+    height: 50vh;
+} */
 .container{
-    margin-top: -70px;
+    /* margin-top: -70px; */
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 700px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
+            0 6px 10px rgba(0, 0, 0, 0.05);
+
+    background-color: white;
 }
 .field{
     margin: 20px;
     position: relative;
     width: fit-content;
-    /* display: inline; */
 }
 .field1 ,.field2{
     height: 35px;
     width: 250px;
     padding: 10px 20px;
     font-size: 20px;
-    border-radius: 5px;
-    border: 2px solid black;
+    border-radius: 3px;
+    outline: none;
+    border: 1.5px solid #C6C6C6;
+    font-size: 20px;
+    font-weight: bold;
+}
+.field1:focus ,.field2:focus{
+    border: 1.5px solid #E5133A;
 }
 i{
     font-size: 12px;
@@ -44,13 +69,14 @@ i{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid black;
-    padding: 5px;
-    border-radius: 5px;
+    /* border-left: 1.5px solid #C6C6C6; */
+    padding: 10px 5px;
+    font-size: 20px;
+    font-weight: bold;
     position: absolute;
-    right: 15px;
+    right: 5px;
     top: 50%;
-    margin-top: -15px;
+    margin-top: -25px;
     transition: 0.2s;
     cursor: pointer;
 }
@@ -66,20 +92,26 @@ i{
     right: -15px;
     z-index: 1;
     top: calc(100% - 10px);
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
+            0 6px 10px rgba(0, 0, 0, 0.05);
+
     background-color: white;
-    padding: 5px 0px 2px 0px;
+    padding: 5px 0px 2px 10px;
     border-radius: 7px;
 }
 .search1, .search2{
-    width: 150px;
-    border: 3px solid #6b6a6a;
-    border-radius: 5px;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat left 4px center;
+    width: 200px;
+    /* border: 3px solid #6b6a6a; */
+    border: none;
+    border-bottom: 1px solid black;
     outline: none;
     padding: 10px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    /* margin-left: 5px; */
+    margin-right: 10px;
     
 }
 .menu1, .menu2{
@@ -99,7 +131,14 @@ border-radius: 10px;
 border-radius: 10px;
 }
 
-
+.swap{
+    background-color: #E5133A;
+    color: white;
+    font-size: 15px;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
   
 
 .option1, .option2{
@@ -109,6 +148,7 @@ border-radius: 10px;
     padding: 5px;
     transition-duration: 0.2s;
     cursor: pointer;
+    font-weight: 600;
 }
 .option1:hover, .option2:hover{
     background-color: #eee;
