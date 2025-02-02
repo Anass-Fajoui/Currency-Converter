@@ -18,6 +18,12 @@ let flag2 = document.querySelector(".currency-div2 img");
 let search1 = document.querySelector(".search1");
 let search2 = document.querySelector(".search2");
 
+let convRateSpan = document.querySelector(".convRate");
+let pc1 = document.querySelector(".pc1");
+let pc2 = document.querySelector(".pc2");
+let swapBtn = document.querySelector(".swap");
+let convertBtn = document.querySelector(".convert");
+
 let currencyData; 
 let flagsData;
 let countries;
@@ -63,6 +69,7 @@ async function setup(){
             }else if(active === 2){
                 updateField1();
             }
+            updateConversionRate();
         }
     });
 
@@ -80,7 +87,7 @@ async function setup(){
             }else if(active === 2){
                 updateField1();
             }
-
+            updateConversionRate();
         }
     });
 };
@@ -103,7 +110,33 @@ function addOption(country, n){
         menu2.appendChild(option);
     }
 }
+// USD = a c1
+// USD = b c2
+// c1 = 1/a USD = b/a c2
 
+function updateConversionRate(){
+    let c1 = Cspan1.innerHTML;
+    let c2 = Cspan2.innerHTML;
+    pc1.innerHTML = c1;
+    pc2.innerHTML = c2;
+    let convRate = currencyData[c2] / currencyData[c1];
+    convRate = convRate.toFixed(3);
+    convRateSpan.innerHTML = `${convRate}`;
+}
+
+function swap(){
+    let c1 = Cspan1.innerHTML;
+    let c2 = Cspan2.innerHTML;
+    updateCurrency1(c2);
+    updateCurrency2(c1);
+    updateConversionRate();
+    if (active === 1){
+        updateField2();
+    }else if(active === 2){
+        updateField1();
+    }
+}
+swapBtn.onclick = swap;
 function updateCurrency1(c){
     Cspan1.innerHTML = c;
     flag1.src = flagsData[c];
@@ -128,7 +161,7 @@ function updateField1(){
         let currency1 = Cspan1.innerHTML;
         let currency2 = Cspan2.innerHTML;
         let convertedValue = convert(value2, currency2, currency1);
-        field1.value = `${convertedValue.toFixed(2)}`;
+        field1.value = `${convertedValue.toFixed(3)}`;
     }
 }
 
@@ -140,7 +173,7 @@ function updateField2(){
         let currency1 = Cspan1.innerHTML;
         let currency2 = Cspan2.innerHTML;
         let convertedValue = convert(value1, currency1, currency2);
-        field2.value = `${convertedValue.toFixed(2)}`;
+        field2.value = `${convertedValue.toFixed(3)}`;
     }
 }
 
@@ -231,4 +264,10 @@ search2.oninput = function(){
     }
 };
 
-
+convertBtn.onclick = function(){
+    if (active === 1){
+        updateField2();
+    }else if(active === 2){
+        updateField1();
+    }
+}
