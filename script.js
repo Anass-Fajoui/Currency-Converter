@@ -47,7 +47,7 @@ async function setup(){
     options1[0].classList.add("active");
     let options2 = Array.from(menu2.children);
     options2[0].classList.add("active");
-
+    
 
     options1.forEach(function(item){
         item.onclick = function(){
@@ -155,8 +155,7 @@ currencyDiv1.onclick = function(){
 
     
 }
-console.log(search1);
-console.log(search2);
+
 
 currencyDiv2.onclick = function(){
     drop1.style.display = "none";

@@ -14,7 +14,6 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
-    /* background-color: #F0F4FE; */
 }
 .half1{
     position: absolute;
@@ -25,22 +24,43 @@ body{
     top: 0;
     left: 0;
 }
-/* .half2{
-    position: absolute;
-    z-index: -1;
-    height: 50vh;
-} */
 .container{
-    /* margin-top: -70px; */
+    padding: 15px 10px;
+    position: relative;
+    width: 700px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
+            0 6px 10px rgba(0, 0, 0, 0.05);
+    background-color: white;
+}
+.title{
+    text-align: center;
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+p{
+    text-align: center;
+}
+/* .conv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+/* .conv1{
+    position: absolute;
+    bottom: 0;
+    left: 35px;
+}
+.conv2{
+    position: absolute;
+    bottom: 0;
+    right: 210px;
+} */
+.field-container{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 700px;
-    /* border: 1px solid black; */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
-            0 6px 10px rgba(0, 0, 0, 0.05);
-
-    background-color: white;
+    margin-bottom: 20px;
 }
 .field{
     margin: 20px;
@@ -51,11 +71,10 @@ body{
     height: 35px;
     width: 250px;
     padding: 10px 20px;
-    font-size: 20px;
+    font-size: 17px;
     border-radius: 3px;
     outline: none;
     border: 1.5px solid #C6C6C6;
-    font-size: 20px;
     font-weight: bold;
 }
 .field1:focus ,.field2:focus{
@@ -69,14 +88,13 @@ i{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* border-left: 1.5px solid #C6C6C6; */
-    padding: 10px 5px;
+    padding: 5px 5px;
     font-size: 20px;
     font-weight: bold;
     position: absolute;
     right: 5px;
     top: 50%;
-    margin-top: -25px;
+    margin-top: -20px;
     transition: 0.2s;
     cursor: pointer;
 }
@@ -92,7 +110,7 @@ i{
     right: -15px;
     z-index: 1;
     top: calc(100% - 10px);
-    /* border: 1px solid black; */
+    
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
             0 6px 10px rgba(0, 0, 0, 0.05);
 
@@ -103,14 +121,12 @@ i{
 .search1, .search2{
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat left 4px center;
     width: 200px;
-    /* border: 3px solid #6b6a6a; */
     border: none;
     border-bottom: 1px solid black;
     outline: none;
     padding: 10px;
     padding-left: 30px;
     margin-bottom: 10px;
-    /* margin-left: 5px; */
     margin-right: 10px;
     
 }
@@ -135,7 +151,7 @@ border-radius: 10px;
     background-color: #E5133A;
     color: white;
     font-size: 15px;
-    padding: 8px;
+    padding: 7px;
     border-radius: 50%;
     cursor: pointer;
 }
