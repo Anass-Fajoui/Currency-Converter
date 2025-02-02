@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
+    
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/heroicons@2.0.17/dist/outline/heroicons.css" rel="stylesheet">
+    
 
 </head> 
 <body> 
     <div class="half1"></div>
-    <!-- <i class="heroicons-exchange"></i> -->
+    
 
-
+    
     <div class="container">
-        <div class="title">Convert currencies instantly <br> 150+ options, limitless possibilities!</div>
+        <div class="title">Convert currencies instantly <br> <span style="color: #E5133A">150+ options</span>, limitless possibilities!</div>
         <p>Unlock the world of currency—making every exchange feel effortless.</p>
         <div class="field-container">
             <div class="field">
@@ -32,9 +32,12 @@
                         
                     </div>
                 </div>
+                <!-- <p class="conv1"></p> -->
             </div>
             
-            <span class="material-icons swap">swap_horiz</span>
+            <svg class="swap" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5 " stroke="currentColor" className="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+            </svg>
             
             <div class="field">
                 <input type="number" placeholder="Converted To" class="field2">
@@ -45,12 +48,13 @@
                         
                     </div>
                 </div>
+                <!-- <p class="conv2">1 USD = 3 SAR</p> -->
             </div>
         </div>
-        <!-- <div class="conv">
-            <p class="conv1">1 USD = 3 SAR</p>
-            <p class="conv2">1 USD = 3 SAR</p>
-        </div> -->
+        <div class="end">
+            <p>1 USD = 3 SAR</p>
+            <div class="convert">Convert</div>
+        </div>
     </div>
     
     <script src="script.js"></script>

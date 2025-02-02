@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    user-select: none;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
@@ -27,6 +28,7 @@ body{
 .container{
     padding: 15px 10px;
     position: relative;
+    border-radius: 10px;
     width: 700px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
             0 6px 10px rgba(0, 0, 0, 0.05);
@@ -41,26 +43,21 @@ body{
 p{
     text-align: center;
 }
-/* .conv{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-/* .conv1{
+
+/* .conv1, .conv2{
     position: absolute;
-    bottom: 0;
-    left: 35px;
-}
-.conv2{
-    position: absolute;
-    bottom: 0;
-    right: 210px;
+    bottom: -40px;
+    left: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    display: none;
 } */
+
 .field-container{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .field{
     margin: 20px;
@@ -97,6 +94,7 @@ i{
     margin-top: -20px;
     transition: 0.2s;
     cursor: pointer;
+    border-radius: 7px;
 }
 
 .currency-div1:hover, .currency-div2:hover{
@@ -150,10 +148,15 @@ border-radius: 10px;
 .swap{
     background-color: #E5133A;
     color: white;
-    font-size: 15px;
-    padding: 7px;
+    padding: 5px;
     border-radius: 50%;
     cursor: pointer;
+    transition: 0.2s;
+}
+.swap:hover{
+    background-color: #F1465D ;
+    background-color: #B40F2A  ;
+
 }
   
 
@@ -162,6 +165,7 @@ border-radius: 10px;
     display: flex;
     align-items: center;
     padding: 5px;
+    border-radius: 7px;
     transition-duration: 0.2s;
     cursor: pointer;
     font-weight: 600;
@@ -181,5 +185,24 @@ img{
 .empty{
     text-align: center;
     padding: 10px;
-    font-size: 20px;
+    font-size: 18px;
+}
+
+.end{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+}
+.convert{
+    background-color: #E5133A;
+    padding: 10px 20px;
+    color: white;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.convert:hover{
+    background-color: #B40F2A;
 }
