@@ -22,8 +22,17 @@ body{
     height: 50vh;
     width: 100%;
     background-color: #F0F5FF;
-    top: 0;
+    top: 50px;
     left: 0;
+}
+h1{
+    position: absolute;
+    top: 60px;
+    font-size: 35px;
+}
+.under{
+    position: absolute;
+    top: 125px;
 }
 .container{
     padding: 15px 10px;
@@ -31,6 +40,7 @@ body{
     border-radius: 10px;
     width: 850px;
     margin: 20px;
+    margin-top: 70px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
             0 6px 10px rgba(0, 0, 0, 0.05);
     background-color: white;
@@ -87,10 +97,7 @@ i{
     padding: 5px 5px;
     font-size: 20px;
     font-weight: bold;
-    /* position: absolute;
-    right: 5px;
-    top: 50%;
-    margin-top: -20px; */
+    margin-right: 5px ;
     transition: 0.2s;
     cursor: pointer;
     border-radius: 7px;
@@ -106,8 +113,7 @@ i{
     position: absolute;
     right: -15px;
     z-index: 1;
-    top: calc(100% - 10px);
-    
+    top: calc(100% - 3px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
             0 6px 10px rgba(0, 0, 0, 0.05);
 
@@ -198,6 +204,7 @@ img{
 }
 .end p{
     font-weight: 600;
+    font-size: 20px;
 }
 .convert{
     background-color: #E5133A;
