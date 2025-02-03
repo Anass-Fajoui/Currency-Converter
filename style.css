@@ -15,6 +15,7 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'Poppins', sans-serif;
+    position: relative;
 }
 .half1{
     position: absolute;
@@ -28,9 +29,13 @@ body{
 h1{
     margin-top: -40px;
     margin-bottom: 10px;
+    text-align: center;
 }
 .under{
     margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
 }
 .container{
     padding: 15px 10px;
@@ -65,7 +70,7 @@ p.slogan{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: fit-content;
+    /* width: fit-content; */
     margin: 0px 20px;
 }
 .field1 ,.field2{
@@ -107,6 +112,7 @@ i{
     right: -15px;
     z-index: 1;
     top: calc(100% - 3px);
+    /* bottom: 100%; */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 
             0 6px 10px rgba(0, 0, 0, 0.05);
 
@@ -225,16 +231,28 @@ img{
 }
 @media (max-width: 900px) {
     body{
-        
+        min-height: 800px;
+    }
+    .half1{
+        height: 400px;
     }
     .container{
         width: fit-content;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .under{
+        margin-bottom: 0px;
     }
     .field-container{
         flex-direction: column;
     }
     .field{
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin: 20px 0px;
+        width: 100%;
+    }
+    .footer{
+        position: absolute;
+        bottom: 20px;
     }
 }
