@@ -30,10 +30,26 @@ let countries;
 
 let active = 0;
 
+
 async function setup(){
-    currencyData = await (await fetch("currency.json")).json();
+    try {
+        currencyData = await (await fetch("https://open.er-api.com/v6/latest/USD")).json();
+    }catch(error){
+        currencyData = await (await fetch("currency.json")).json();
+
+        const notyf = new Notyf({
+            duration: 2000,
+            dismissible: true,
+            position: { x: "right", y: "top" }
+          });
+      
+          notyf.error("Connection error with the server.");
+          setTimeout(function(){
+            notyf.error("The exchange rate may be outdated. Please try again later.");
+          },2500)
+    }
+    
     flagsData = await (await fetch("flags.json")).json();
-    // currencyData = await (await fetch("https://open.er-api.com/v6/latest/USD")).json();
 
     currencyData = currencyData["rates"];
     countries = Object.keys(currencyData);
