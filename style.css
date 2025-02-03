@@ -70,7 +70,7 @@ p.slogan{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* width: fit-content; */
+    width: 360px;
     margin: 0px 20px;
 }
 .field1 ,.field2{
@@ -109,7 +109,7 @@ i{
     user-select: none;
     display: none;
     position: absolute;
-    right: -15px;
+    right: -5px;
     z-index: 1;
     top: calc(100% - 3px);
     /* bottom: 100%; */
@@ -118,6 +118,7 @@ i{
 
     background-color: white;
     padding: 5px 0px 2px 10px;
+    width: 300px;
     border-radius: 7px;
 }
 .search1, .search2{

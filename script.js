@@ -57,8 +57,8 @@ async function setup(){
     Cspan1.innerHTML = firstCountry;
     Cspan2.innerHTML = firstCountry;
     
-    flag1.src = flagsData[firstCountry];
-    flag2.src = flagsData[firstCountry];
+    flag1.src = flagsData[firstCountry][0];
+    flag2.src = flagsData[firstCountry][0];
 
     for (let country of countries){
         addOption(country, 1);
@@ -115,9 +115,16 @@ function addOption(country, n){
         
     option.setAttribute("value", country);
     let img = document.createElement("img");
-    img.src = flagsData[country];
+    img.src = flagsData[country][0];
     option.appendChild(img);
     option.appendChild(document.createTextNode(country));
+    let abv = document.createElement("span");
+    abv.innerHTML = `&nbsp;(${flagsData[country][1]})`
+    abv.style.fontSize = "13px";
+    option.appendChild(abv);
+
+    // option.appendChild(document.createTextNode(flagsData[country][1]));
+
     if (n === 1){
         option.className = "option1";
         menu1.appendChild(option);
@@ -156,12 +163,12 @@ swapBtn.onclick = swap;
 
 function updateCurrency1(c){
     Cspan1.innerHTML = c;
-    flag1.src = flagsData[c];
+    flag1.src = flagsData[c][0];
 }
 
 function updateCurrency2(c){
     Cspan2.innerHTML = c;
-    flag2.src = flagsData[c];
+    flag2.src = flagsData[c][0];
 }
 
 function convert(amount, c1, c2){
