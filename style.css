@@ -123,7 +123,7 @@ i{
 }
 .search1, .search2{
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="gray" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.415l-3.85-3.85a1.007 1.007 0 0 0-.115-.098zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat left 4px center;
-    width: 200px;
+    width: 290px;
     border: none;
     border-bottom: 1px solid black;
     outline: none;
@@ -131,6 +131,7 @@ i{
     padding-left: 30px;
     margin-bottom: 10px;
     margin-right: 10px;
+    
     
 }
 .menu1, .menu2{
@@ -255,7 +256,7 @@ img{
         margin-right: 20px;
         padding-left: 20px;
         padding-right: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .under{
         margin-bottom: 10px;
