@@ -27,13 +27,15 @@ let convertBtn = document.querySelector(".convert");
 let currencyData; 
 let flagsData;
 let countries;
+let options1 = [];
+let options2 = [];
 
 let active = 0;
 
 
 async function setup(){
     try {
-        currencyData = await (await fetch("https://open.er-api.com/v6/latest/USD")).json();
+        currencyData = await (await fetch("jjhttps://open.er-api.com/v6/latest/USD")).json();
     }catch(error){
         console.log("there is an error here buddy");
         currencyData = await (await fetch("currency.json")).json();
@@ -66,14 +68,15 @@ async function setup(){
         addOption(country, 2);
     }
 
-    let options1 = Array.from(menu1.children);
+    // options1 = Array.from(menu1.children);
     options1[0].classList.add("active");
-    let options2 = Array.from(menu2.children);
+    // options2 = Array.from(menu2.children);
     options2[0].classList.add("active");
     
 
     options1.forEach(function(item){
         item.onclick = function(){
+            console.log("option clicked : " + item.getAttribute("value"));
             options1.forEach(function(b){
                 b.classList.remove("active");
             })
@@ -87,11 +90,13 @@ async function setup(){
                 updateField1();
             }
             updateConversionRate();
+            console.log("updated successfully");
         }
     });
 
     options2.forEach(function(item){
         item.onclick = function(){
+            console.log("option clicked : " + item.getAttribute("value"));
             options2.forEach(function(b){
                 b.classList.remove("active");
             })
@@ -105,6 +110,8 @@ async function setup(){
                 updateField1();
             }
             updateConversionRate();
+            console.log("updated successfully");
+
         }
     });
 };
@@ -113,7 +120,7 @@ setup();
 
 function addOption(country, n){
     let option = document.createElement("div");
-        
+    
     option.setAttribute("value", country);
     let img = document.createElement("img");
     img.src = flagsData[country][0];
@@ -124,13 +131,16 @@ function addOption(country, n){
     abv.style.fontSize = "13px";
     option.appendChild(abv);
 
-    // option.appendChild(document.createTextNode(flagsData[country][1]));
-
+    if (country === "MAD"){
+        console.log(option);
+    }
     if (n === 1){
         option.className = "option1";
+        options1.push(option);
         menu1.appendChild(option);
     }else{
         option.className = "option2";
+        options2.push(option);
         menu2.appendChild(option);
     }
 }
@@ -244,17 +254,11 @@ currencyDiv2.addEventListener("click", (event) => {
 });
 
 field1.oninput = function(){
-    // if (field1.value.length > 13) {
-    //     field1.value = field1.value.slice(0, 13);
-    // }
     updateField2();
     active = 1;
 };
 
 field2.oninput = function(){
-    // if (field2.value.length > 13) {
-    //     field2.value = field2.value.slice(0, 13);
-    // }
     updateField1();
     active = 2;
 };
@@ -263,9 +267,15 @@ search1.oninput = function(){
     let val1 = search1.value;
     val1 = val1.toUpperCase();
     menu1.replaceChildren();
-    countries.forEach(function(item){
-        if (item.includes(val1)){
-            addOption(item, 1)
+    // countries.forEach(function(item){
+    //     if (item.includes(val1)){
+    //         addOption(item, 1)
+    //     }
+    // })
+    options1.forEach(function(option){
+        let current = option.getAttribute("value");
+        if (current.includes(val1)){
+            menu1.appendChild(option);
         }
     })
 
@@ -280,9 +290,15 @@ search2.oninput = function(){
     let val2 = search2.value;
     val2 = val2.toUpperCase();
     menu2.replaceChildren();
-    countries.forEach(function(item){
-        if (item.includes(val2)){
-            addOption(item, 2)
+    // countries.forEach(function(item){
+    //     if (item.includes(val2)){
+    //         addOption(item, 2)
+    //     }
+    // })
+    options2.forEach(function(option){
+        let current = option.getAttribute("value");
+        if (current.includes(val2)){
+            menu2.appendChild(option);
         }
     })
     if (menu2.children.length === 0) {
