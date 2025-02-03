@@ -218,3 +218,15 @@ img{
 .convert:hover{
     background-color: #B40F2A;
 }
+
+.footer{
+    position: absolute;
+    bottom: 10px;
+}
+.anass{
+    color: #E5133A;
+    font-weight: bold;
+}
+.anass:hover{
+    color: #B40F2A;
+}
