@@ -33,20 +33,20 @@ let active = 0;
 
 async function setup(){
     try {
-        currencyData = await (await fetch("jjhttps://open.er-api.com/v6/latest/USD")).json();
+        currencyData = await (await fetch("https://open.er-api.com/v6/latest/USD")).json();
     }catch(error){
         currencyData = await (await fetch("currency.json")).json();
 
         const notyf = new Notyf({
-            duration: 2000,
+            duration: 2500,
             dismissible: true,
             position: { x: "right", y: "top" }
           });
       
-          notyf.error("Connection error with the server.");
-          setTimeout(function(){
-            notyf.error("The exchange rate may be outdated. Please try again later.");
-          },2500)
+        notyf.error("Connection error with the server.");
+        setTimeout(function(){
+            notyf.error("The exchange rates may be outdated. Please try again later.");
+        }, 3000)
     }
     
     flagsData = await (await fetch("flags.json")).json();
