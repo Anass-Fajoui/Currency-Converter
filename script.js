@@ -33,7 +33,7 @@ let active = 0;
 
 async function setup(){
     try {
-        currencyData = await (await fetch("https://open.er-api.com/v6/latest/USD")).json();
+        currencyData = await (await fetch("jjhttps://open.er-api.com/v6/latest/USD")).json();
     }catch(error){
         currencyData = await (await fetch("currency.json")).json();
 
