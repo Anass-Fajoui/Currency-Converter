@@ -203,8 +203,9 @@ img{
 .end p{
     font-weight: 600;
     font-size: 20px;
+    margin-left: 10px;
 }
-.convert{
+/* .convert{
     background-color: #E5133A;
     padding: 10px 20px;
     color: white;
@@ -213,7 +214,7 @@ img{
     cursor: pointer;
     transition: 0.2s;
     display: none;
-}
+} */
 .convert:hover{
     background-color: #B40F2A;
 }
