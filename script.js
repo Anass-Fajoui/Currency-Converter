@@ -35,6 +35,7 @@ async function setup(){
     try {
         currencyData = await (await fetch("https://open.er-api.com/v6/latest/USD")).json();
     }catch(error){
+        console.log("there is an error here buddy");
         currencyData = await (await fetch("currency.json")).json();
 
         const notyf = new Notyf({
@@ -292,10 +293,10 @@ search2.oninput = function(){
     }
 };
 
-convertBtn.onclick = function(){
-    if (active === 1){
-        updateField2();
-    }else if(active === 2){
-        updateField1();
-    }
-}
+// convertBtn.onclick = function(){
+//     if (active === 1){
+//         updateField2();
+//     }else if(active === 2){
+//         updateField1();
+//     }
+// }
